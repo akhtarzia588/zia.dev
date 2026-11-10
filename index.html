@@ -233,7 +233,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isInte
 e.target.querySelectorAll("[data-n]").forEach(function(el){var n=+el.dataset.n,s=el.dataset.s||"",t0=null;
 if(rm){el.textContent=n+s;return}
 (function st(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(st)})(performance.now())});
-io.unobserve(e.target)})},{threshold:.15});
+io.unobserve(e.target)})},{threshold:0,rootMargin:"0px 0px -6% 0px"});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 /* scroll progress, glow, tilt */
 var pg=document.getElementById("pg");addEventListener("scroll",function(){var h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"},{passive:true});
